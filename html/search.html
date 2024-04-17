@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Search Results</title>
+    <link rel="stylesheet" href="../css/search.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form class="search-form" onsubmit="handleSearch(event)">
+        <input type="text" id="model" placeholder="Enter Car Model">
+        <input type="text" id="location" placeholder="Enter Location">
+        <button type="submit">Search</button>
+    </form>
+    <div class="results-container">
+        <h2>Search Results</h2>
+        <div id="searchResults"></div>
+        <button onclick="goToHomePage()">Back to Home</button>
+    </div>
+
+    <script src="../js/search.js"></script> 
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Car Advertisement</title>
+    <link rel="stylesheet" href="../css/addcar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Car Advertisement</h2>
+        <form id="addCarForm" onsubmit="return validateAddCarForm()">
+            <div class="form-group">
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" required>
+            </div>
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="text" id="year" name="year" required>
+            </div>
+            <div class="form-group">
+                <label for="mileage">Mileage:</label>
+                <input type="text" id="mileage" name="mileage" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <button type="submit">Add Car</button>
+        </form>
+    </div>
+
+    <script src="../js/addcar.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.business-info {
+    margin-bottom: 20px;
+}
+
+.staff-member {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.staff-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Sono', sans-serif;
+}
