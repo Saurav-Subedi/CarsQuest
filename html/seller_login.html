@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +10,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <h2>Seller Login</h2>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="CarQuest Logo"></a>
+            <ul class="nav-links">
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="seller_registration.html">Register</a></li>
+                <!-- <li><a href="seller_login.html">Login</a></li> -->
+                <li><a href="addcar.html">Add Car</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="login-container">
+        <h2 class="login-title">Seller Login</h2>
         <form id="sellerLoginForm">
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -25,8 +35,9 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">Login</button>
+            <a href="index.html" class="button">Go to Homepage</a>
+
         </form>
     </div>
 </body>
-
 </html>

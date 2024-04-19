@@ -12,13 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleButtonMouseover(event) {
+        event.target.style.transition = 'background-color 0.3s ease'; 
         event.target.style.backgroundColor = 'lightblue';
+    }
+
+    function handleButtonMouseout(event) {
+        event.target.style.transition = 'background-color 0.3s ease'; 
+        event.target.style.backgroundColor = '';
     }
 
     function validateForm() {
         let isValid = true;
 
-        // Check each input field for empty values
         inputs.forEach(input => {
             if (!input.value.trim()) {
                 isValid = false;
@@ -30,25 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    // Add event listeners for input fields
     inputs.forEach(input => {
         input.addEventListener('focus', handleInputFocus);
         input.addEventListener('blur', handleInputBlur);
     });
 
-    // Add event listener for button mouseover
     button.addEventListener('mouseover', handleButtonMouseover);
+    button.addEventListener('mouseout', handleButtonMouseout);
 
-    // Event listener for form submission
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); 
 
-        // Validate form
         if (!validateForm()) {
-            return; // Stop form submission if validation fails
+            return;
         }
 
-        // If all fields are filled, display success message and reset form
         alert('Car advertisement added successfully!');
         form.reset();
     });

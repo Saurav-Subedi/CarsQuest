@@ -12,18 +12,33 @@
 </head>
 
 <body>
-    <form class="search-form" onsubmit="handleSearch(event)">
-        <input type="text" id="model" placeholder="Enter Car Model">
-        <input type="text" id="location" placeholder="Enter Location">
-        <button type="submit">Search</button>
-    </form>
-    <div class="results-container">
-        <h2>Search Results</h2>
-        <div id="searchResults"></div>
-        <button onclick="goToHomePage()">Back to Home</button>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="CarQuest Logo"></a>
+            <ul class="nav-links">
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="seller_registration.html">Register</a></li>
+                <li><a href="seller_login.html">Login</a></li>
+                <li><a href="addcar.html">Add Car</a></li>
+            </ul> 
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <form class="search-form" onsubmit="handleSearch(event)">
+            <input type="text" id="model" placeholder="Enter Car Model">
+            <input type="text" id="location" placeholder="Enter Location">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="results-container">
+            <h2>Search Results</h2>
+            <div id="searchResults"></div>
+            <a href="index.html" class="button">Go to Homepage</a>
+        </div>
     </div>
 
-    <script src="../js/search.js"></script> 
+    <script src="../js/search.js"></script>
 </body>
 
 </html>

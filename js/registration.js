@@ -3,41 +3,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputs = form.querySelectorAll('input');
 
     function handleInputFocus(event) {
+        event.target.style.transition = 'background-color 0.3s ease';
         event.target.style.backgroundColor = 'yellow';
     }
 
     function handleInputBlur(event) {
+        event.target.style.transition = 'background-color 0.3s ease'; 
         event.target.style.backgroundColor = 'white';
     }
 
     function handleButtonMouseover(event) {
+        event.target.style.transition = 'background-color 0.3s ease'; 
         event.target.style.backgroundColor = 'lightblue';
     }
 
     function validatePassword(password) {
-        // Check if password length is between 6 to 10 characters
         if (password.length < 6 || password.length > 10) {
             return false;
         }
     
-        // Check for at least one alphabet character, one numeric character,
-        // and one of the specified special characters in the password
-        const hasAlphabet = /[a-zA-Z]/.test(password);
-        const hasNumber = /[0-9]/.test(password);
+        const hasDigit = /[0-9]/.test(password);
         const hasSpecialChar = /[_$#@?]/.test(password);
     
-        // Ensure that all required characters are present in the password
-        return hasAlphabet && hasNumber && hasSpecialChar;
+        return hasDigit && hasSpecialChar;
     }
     
-
     inputs.forEach(input => {
         input.addEventListener('focus', handleInputFocus);
         input.addEventListener('blur', handleInputBlur);
     });
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); 
 
         const name = form.querySelector('#name').value;
         const address = form.querySelector('#address').value;
@@ -52,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!validatePassword(password)) {
-            alert('Password must be between 6 to 10 characters and contain alphabets, numbers, and special characters (_$#@?).');
+            alert('Password must be between 6 to 10 characters and contain at least one digit and one special character (_$#@?).');
             return;
         }
 

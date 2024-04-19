@@ -42,6 +42,28 @@ function handleSearch(event) {
         });
     }
 }
-function goToHomePage() {
-    window.location.href = '../html/index.html'; 
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const submitButton = document.querySelector('button[type="submit"]');
+
+    // Add event listeners for input fields
+    inputFields.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.style.backgroundColor = 'yellow'; // Change background color to yellow on focus
+        });
+
+        input.addEventListener('blur', () => {
+            input.style.backgroundColor = 'white'; // Change background color to white on blur
+        });
+    });
+
+    // Add event listener for submit button
+    submitButton.addEventListener('mouseover', () => {
+        submitButton.style.backgroundColor = 'blue'; // Change background color to blue on mouseover
+    });
+
+    submitButton.addEventListener('mouseout', () => {
+        submitButton.style.backgroundColor = ''; // Reset background color on mouseout
+    });
+});
+

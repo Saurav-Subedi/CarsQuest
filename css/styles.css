@@ -1,144 +1,116 @@
-/* Reset default margin and padding */
 body, h1, p, ul, li {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-family: 'Mulish', sans-serif;
-    font-family: 'Sono', sans-serif;
-      
+    font-family: 'Montserrat Alternates', 'Mulish', 'Sono', sans-serif; 
 }
 
-/* Basic styling for navigation bar */
 .navbar {
-    background-color: #fff; /* White background */
-    color: #000; /* Black text color */
-    height: 70px; /* Specific height for the navbar */
+    background-color: #fff;
+    color: #000;
+    height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
     align-items: center;
+    padding: 0 20px; 
 }
 
 .container {
-    width: 90%; /* 90% width within the navbar */
-    max-width: 1200px; /* Maximum width for the container */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    display: flex; /* Use flexbox for logo */
-    align-items: center; /* Center logo vertically */
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    max-height: 100%; /* Ensure logo scales proportionally */
-    width: auto; /* Allow logo to adjust width proportionally */
+    max-height: 100%;
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
-    display: flex; /* Use flexbox for navigation links */
+    display: flex;
     align-items: center;
 }
 
 .nav-links li {
-    margin-right: 35px; /* Adjusted margin between navigation links */
+    margin-right: 35px;
 }
 
 .nav-links li:last-child {
-    margin-right: 0; /* Remove margin from the last navigation link */
+    margin-right: 0;
 }
 
 .nav-links li a {
-    color: #000; /* Black text color for navigation links */
+    color: #000;
     text-decoration: none;
-    font-size: 18px; /* Font size for navigation links */
-    font-weight: 400; /* Normal font weight */
-}
-
-/* Search Form */
-.search-form {
-    display: flex; /* Use flexbox for search form */
-    align-items: center;
-    margin-right: 10px; /* Adjust margin for the search form */
-}
-
-.search-form input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px 20px;
     border-radius: 5px;
-    width: 200px; /* Adjust width of the search input */
+    transition: color 0.3s ease;
 }
 
-.search-form button {
-    padding: 10px 10px;
-    font-size: 16px;
-    background-color: #010b16;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.nav-links li a:hover {
+    color: #0056b3; 
+    font-weight: bold; 
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .container {
-        width: 90%; /* Adjust width for smaller screens */
-    }
-
-    .nav-links {
-        display: none; /* Hide nav links on smaller screens */
-    }
-
-    .navbar {
-        height: 60px; /* Reduce navbar height for smaller screens */
-    }
-
-    .logo img {
-        max-height: 40px; /* Decrease logo size for smaller screens */
-    }
-
-    .nav-links li a {
-        font-size: 16px; /* Decrease font size for smaller screens */
-    }
-
-    .search-form input[type="text"] {
-        width: 200px; /* Adjust width of the search input for smaller screens */
-    }
-}
-/* Full-width Car Photo */
-.car-photo {
-    width: 100%;
-    overflow: hidden; /* Ensure photo does not exceed specified height */
+.nav-links li a:active {
+    color: #36cb4e;
+    text-decoration: none; 
 }
 
 .car-photo img {
-    width: 100vw; /* Full width of viewport */
+    width: 100vw;
     height: auto;
-    max-height: 655px; /* Limit the height to 665px */
-    display: block; /* Ensure image is displayed as a block element */
-    object-fit: cover; /* Cover the entire container with the image */
+    max-height: 655px;
+    display: block;
+    object-fit: cover;
 }
 
-/* Full-width Details Section */
-.details {
-    background-color: #f9f9f9; /* Light background color for details section */
+.introduction {
+    background-color: #f9f9f9;
     padding: 50px 0;
+    text-align: center;
+}
+
+.introduction h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.details {
+    padding: 50px 20px; 
     display: flex;
-    justify-content: space-between; /* Distribute space between detail items */
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .detail {
-    flex: 1; /* Each detail item takes up equal space */
-    padding: 0 30px; /* Add padding to each detail item for spacing */
-    text-align: center; /* Center-align the content within each detail item */
+    flex: 1;
+    max-width: 400px; 
+    padding: 0 30px; 
+    text-align: justify;
+    margin-bottom: 30px; 
 }
 
 .detail h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .detail p {
@@ -146,14 +118,18 @@ body, h1, p, ul, li {
     line-height: 1.5;
 }
 
-/* Customize Detail Layout */
-.detail {
-    margin-left: 40px; /* Increase left margin for the first detail item */
-    margin-right: 20px; /* Decrease right margin for the detail items */
+.intro-content {
+    max-width: 600px; 
+    margin: 0 auto; 
 }
 
-.detail:last-child {
-    margin-right: 40px; /* Increase right margin for the last detail item */
+.intro-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-  
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}

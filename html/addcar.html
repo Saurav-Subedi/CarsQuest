@@ -9,9 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h2>Add Car Advertisement</h2>
+<body>   
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="CarQuest Logo"></a>
+            <ul class="nav-links">
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="seller_registration.html">Register</a></li>
+                <li><a href="seller_login.html">Login</a></li>
+                <!-- <li><a href="addcar.html">Add Car</a></li> -->
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="addcar-container">
+        <h2 class="addcar.title">Add Car Advertisement</h2>
         <form id="addCarForm" onsubmit="return validateAddCarForm()">
             <div class="form-group">
                 <label for="make">Make:</label>
@@ -38,6 +51,7 @@
                 <input type="text" id="price" name="price" required>
             </div>
             <button type="submit">Add Car</button>
+            <a href="index.html" class="button">Go to Homepage</a>
         </form>
     </div>
 
