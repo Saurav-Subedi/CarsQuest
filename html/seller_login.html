@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller Login</title>
-    <link rel="stylesheet" href="../css/login.css"> 
+    <link rel="stylesheet" href="../css/login.css">
     <script src="../js/login.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,15 @@
             <ul class="nav-links">
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="seller_registration.html">Register</a></li>
-                <!-- <li><a href="seller_login.html">Login</a></li> -->
                 <li><a href="addcar.html">Add Car</a></li>
                 <li><a href="search.html">Search</a></li>
             </ul>
         </div>
     </nav>
+
     <div class="login-container">
         <h2 class="login-title">Seller Login</h2>
-        <form id="sellerLoginForm">
+        <form id="sellerLoginForm" action="../php/login.php" method="POST">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -36,8 +36,8 @@
             </div>
             <button type="submit">Login</button>
             <a href="index.html" class="button">Go to Homepage</a>
-
         </form>
+        <div id="error-message" style="display:none;color:red;">Invalid username or password. Please try again.</div>
     </div>
 </body>
 </html>

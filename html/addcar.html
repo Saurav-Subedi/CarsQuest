@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Car Advertisement</title>
-    <link rel="stylesheet" href="../css/addcar.css">
+    <title>Add Car</title>
+    <link rel="stylesheet" href="../css/add_car.css">
+    <script src="../js/add_car.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
 </head>
-<body>   
+<body>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo"><img src="../images/logo.png" alt="CarQuest Logo"></a>
@@ -17,15 +18,14 @@
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="seller_registration.html">Register</a></li>
                 <li><a href="seller_login.html">Login</a></li>
-                <!-- <li><a href="addcar.html">Add Car</a></li> -->
                 <li><a href="search.html">Search</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="addcar-container">
-        <h2 class="addcar.title">Add Car Advertisement</h2>
-        <form id="addCarForm" onsubmit="return validateAddCarForm()">
+    <div class="add-car-container">
+        <h2>Add Car</h2>
+        <form id="addCarForm" action="../php/addcar.php" method="POST">
             <div class="form-group">
                 <label for="make">Make:</label>
                 <input type="text" id="make" name="make" required>
@@ -36,25 +36,15 @@
             </div>
             <div class="form-group">
                 <label for="year">Year:</label>
-                <input type="text" id="year" name="year" required>
-            </div>
-            <div class="form-group">
-                <label for="mileage">Mileage:</label>
-                <input type="text" id="mileage" name="mileage" required>
-            </div>
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
+                <input type="number" id="year" name="year" required>
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="text" id="price" name="price" required>
+                <input type="number" id="price" name="price" required>
             </div>
-            <button type="submit">Add Car</button>
-            <a href="index.html" class="button">Go to Homepage</a>
+            <button type="submit">Submit</button>
         </form>
+        <div id="acknowledgment" style="display:none;">Car details submitted successfully!</div>
     </div>
-
-    <script src="../js/addcar.js"></script>
 </body>
 </html>
