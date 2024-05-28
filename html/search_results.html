@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../css/search_results.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="CarQuest Logo"></a>
+            <ul class="nav-links">
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="seller_registration.html">Register</a></li>
+                {% comment %} <li><a href="seller_login.html">Login</a></li> {% endcomment %}
+                <li><a href="addcar.html">Add Car</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="search-container">
+        <h2 class="search-title">Search for Cars</h2>
+        <form class="search-form" action="../php/search.php" method="GET">
+            <input type="text" name="model" placeholder="Enter car model" required>
+            <input type="text" name="location" placeholder="Enter location" required>
+            <button type="submit">Search</button>
+        </form>
+        <div class="results-container">
+            <!-- Example of search result item -->
+            <div class="result-item">
+                <img src="../images/car_example.jpg" alt="Car Image">
+                <div class="result-details">
+                    <h3 class="result-title">Car Make and Model (Year)</h3>
+                    <p class="result-info">Location: City, State</p>
+                    <p class="result-price">$Price</p>
+                    <button class="result-view-button">View Details</button>
+                </div>
+            </div>
+            <!-- Repeat result items as necessary -->
+        </div>
+    </div>
+</body>
+</html>

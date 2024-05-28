@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Cars</title>
     <link rel="stylesheet" href="../css/search.css">
-    <script src="../js/search.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
@@ -18,25 +17,23 @@
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="seller_registration.html">Register</a></li>
                 <li><a href="seller_login.html">Login</a></li>
-                <li><a href="search.html">Search</a></li>
+                <li><a href="addcar.html">Add Car</a></li>
             </ul>
         </div>
     </nav>
-
     <div class="search-container">
-        <h2>Search Cars</h2>
-        <form id="searchForm">
+        <h2 class="search-title">Search Cars</h2>
+        <form id="searchForm" action="../php/search_results.php" method="GET">
             <div class="form-group">
-                <label for="model">Model:</label>
-                <input type="text" id="model" name="model">
+                <label for="model">Car Model:</label>
+                <input type="text" id="model" name="model" required>
             </div>
             <div class="form-group">
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location">
+                <input type="text" id="location" name="location" required>
             </div>
             <button type="submit">Search</button>
         </form>
-        <div id="searchResults"></div>
     </div>
 </body>
 </html>

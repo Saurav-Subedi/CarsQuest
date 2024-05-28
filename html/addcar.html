@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Car</title>
-    <link rel="stylesheet" href="../css/add_car.css">
-    <script src="../js/add_car.js" defer></script>
+    <link rel="stylesheet" href="../css/addcar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mulish&family=Open+Sans&family=Sono&display=swap" rel="stylesheet">
@@ -22,9 +21,8 @@
             </ul>
         </div>
     </nav>
-
-    <div class="add-car-container">
-        <h2>Add Car</h2>
+    <div class="addcar-container">
+        <h2 class="addcar-title">Add Car</h2>
         <form id="addCarForm" action="../php/addcar.php" method="POST">
             <div class="form-group">
                 <label for="make">Make:</label>
@@ -42,9 +40,12 @@
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" required>
             </div>
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <button type="submit">Add Car</button>
         </form>
-        <div id="acknowledgment" style="display:none;">Car details submitted successfully!</div>
     </div>
 </body>
 </html>

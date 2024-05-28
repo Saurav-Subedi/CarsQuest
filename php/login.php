@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // Update with your server details
-$username = "root"; // Update with your database username
-$password = "123123"; // Update with your database password
-$dbname = "car_quest"; // Update with your database name
+$servername = "localhost";
+$username = "root";
+$password = "123123";
+$dbname = "car_quest";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,28 +12,37 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM sellers WHERE username = '$username'";
-    $result = $conn->query($sql);
+    // Prepare and bind
+    $stmt = $conn->prepare("SELECT id, password FROM sellers WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            // Start session and store user information
-            session_start();
-            $_SESSION['username'] = $username;
-            // Redirect to seller page
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $hashed_password);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            // Password is correct, start a session
+            $_SESSION['seller_id'] = $id;
             header("Location: ../html/seller.html");
             exit();
         } else {
-            echo "<script>document.getElementById('error-message').style.display = 'block';</script>";
+            // Password is incorrect
+            echo "<script>alert('Incorrect password.'); window.location.href = '../html/seller.html';</script>";
         }
     } else {
-        echo "<script>document.getElementById('error-message').style.display = 'block';</script>";
+        // Username not found
+        echo "<script>alert('Username not found.'); window.location.href = '../html/seller.html';</script>";
     }
+
+    $stmt->close();
 }
 
 $conn->close();
